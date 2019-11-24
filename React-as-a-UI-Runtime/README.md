@@ -39,3 +39,8 @@ ReactDOM.render(
 - React Component 는 항상 대문자로 시작한다. 이유는 `JSX`가 대문자로 시작하는 Component를 볼 때 type에 컴포넌트(함수)를 할당하기 때문이다. (React element의 경우는 element type(ex. "button")을 string 형태로 type에 할당한다.)
 - React 는 element.type이 function이면 Child Component 를 재귀적으로 실행한다.
 
+
+## IoC
+- 우리는 `CustomElement({...props})` 함수 호출이 아닌 `<Form {...props}>`를 전달한다. 이것은 IoC(제어의 역전)로 우리가 실행하지 않고 React가 해당 함수를 실행한다는 것을 의미한다.
+- IoC의 장점
+  - 
