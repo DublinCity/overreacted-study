@@ -4,7 +4,7 @@
 - React hooks 를 사용할때는 lifecycle의 시각으로 보면 안된다. 이는 두 구현의 멘탈모델이 다르기 때문이다.
 
 ## TLDR
--  Question: How do I replicate componentDidMount with useEffect?
+-  Question: How do I replicate componentDidMount with useEffect?  
   - 비슷하지만 같지 않다. `useEffect(fn,[])` 는 `deps` 가 없어서 한번 실행되지만 그 시점의 `state`, `props` 를 capture 하기 때문이고 class instance 의 `props`, `state` 는 `가변(이하 mutable)` 하기 때문이다. 만약 `useEffect` 에서 처음 렌더링 되고 `mutable` 한 값을 사용하고 싶다면, `createRef` 를 사용해서 mutable 객체를 사용해도 된다. 그런데 보통 더 간단한 방법이 있으므로 클래스와 멘탈모델이 다르다는 것을 기억하고 `useEffect` 의 방식으로 생각하는 것이 필요하다. hooks 의 멘탈모델은 lifecycle이 아니라 state 를 synchronization(동기화)하는데 가깝다.
 - Question: How do I correctly fetch data inside useEffect? What is []?
   - `[]` 는 `effect` 가 React data flow 에 참여하는 값을 사용하지 않는다는 것을 의미한다.
